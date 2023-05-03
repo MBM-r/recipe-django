@@ -1,81 +1,47 @@
 {% extends 'base/base.html' %}
-
-
+{% load static %}
+{% block css %}
+<style>
+    body {
+        background-image: url('https://images.dailyhive.com/20160712113557/vegan.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+{% endblock %}
 {% block content %}
-
-
-<form method="post" novalidate class="mx-auto needs-validation flex items-center justify-center min-h-screen bg-orange-100">
+<div class="container col-xxl-3 col-xl-4 col-lg-5 col-md-6 col-sm-7 col-11 mt-6 p-5 ">
+</div>
+<div class="container col-xxl-3 col-xl-4 col-lg-5 col-md-6 col-sm-7 col-11 mt-6 p-5 ">
     
-    <div class="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
-
-        <div class="flex flex-col justify-center p-8 md:p-14">
-            <span class="mb-3 text-4xl font-bold">Bienvenue</span>
-            <span class="font-light text-gray-400 mb-8">
-                Connectez Vous a votre compte !!!
-            </span>
-            {% csrf_token %}
-    <div class="py-4">
-        <span class="mb-2 text-md">Username</span>
-        <input type="text" name="username" required class="form-control p-2">
-     
-        <div class="invalid-feedback">
-            Username required.
+</div>
+<div class="container col-xxl-3 col-xl-4 col-lg-5 col-md-6 col-sm-7 col-11 mt-6 p-5 border rounded shadow bg-white">
+    <img src="{% static 'base/assets/img/logo.png' %}" alt="user" width="250" class="d-block mx-auto mb-5">
+    <form method="post" class="mx-auto needs-validation" novalidate>
+        {% csrf_token %}
+        <div class="form-floating mb-4">
+            <input type="text" name="username" required class="form-control" placeholder="Username">
+            <label>Username</label>
+            <div class="invalid-feedback">
+                Username required.
+            </div>
         </div>
-    </div>
-    <div class="pb-4">
-        <span class="mb-2 text-md">Password</span>
-        <input type="password" name="password" required class="form-control p-2">
-    
-        <div class="invalid-feedback">
-            Password required.
+        <div class="form-floating">
+            <input type="password" name="password" required class="form-control" placeholder="Password">
+            <label>Password</label>
+            <div class="invalid-feedback">
+                Password required.
+            </div>
         </div>
-    </div>
-    <div class="flex justify-between w-full py-4">
-        <div class="mr-24">
-          <input type="checkbox" name="ch" id="ch" class="mr-2" />
-          <span class="text-md">Se souvenir</span>
+        <div class="d-grid mt-4">
+            <button type="submit" class="btn rounded btn-warning">Sign in</button>
         </div>
-      </div>
-    <div class="d-grid mt-4">
-        <button type="submit" class="w-full bg-orange-700 text-white p-2 rounded-lg mb-6 hover:bg-orange-600 hover:text-black hover:border hover:border-gray-300">Sign in</button>
-    </div>
-   
-        </div>
-
-        <div class="relative">
-            <img src="https://i.ibb.co/CnByF3p/Resto1.png" alt="Resto1"
-                class="w-[400px] h-full hidden rounded-r-2xl md:block object-cover" />
-
-          
-        </div>
-    </div>
-</form>
-
-<!-- 
- <form method="post" class="mx-auto needs-validation" novalidate>
-    {% csrf_token %}
-    <div class="form-floating mb-4">
-        <input type="text" name="username" required class="form-control" placeholder="Username">
-        <label>Username</label>
-        <div class="invalid-feedback">
-            Username required.
-        </div>
-    </div>
-    <div class="form-floating">
-        <input type="password" name="password" required class="form-control" placeholder="Password">
-        <label>Password</label>
-        <div class="invalid-feedback">
-            Password required.
-        </div>
-    </div>
-    <div class="d-grid mt-4">
-        <button type="submit" class="btn btn-success ">Sign in</button>
-    </div>
-    {% comment %} <div class="text-center mt-3">
-        <a href="{% url 'user:password_reset' %}" class="text-decoration-none">Forgotten password?</a>
-    </div> {% endcomment %}
-</form>  -->
-
+        {% comment %} <div class="text-center mt-3">
+            <a href="{% url 'user:password_reset' %}" class="text-decoration-none">Forgotten password?</a>
+        </div> {% endcomment %}
+    </form>
+</div>
 <script>
     const form = document.querySelector('.needs-validation')
     form.addEventListener('submit', event => {
@@ -89,16 +55,59 @@
 </script>
 {% endblock %}
 {% block js %}
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.all.min.js"
-    integrity="sha256-RhRrbx+dLJ7yhikmlbEyQjEaFMSutv6AzLv3m6mQ6PQ=" crossorigin="anonymous"></script>
-{% if error_message %}
-<script>
-    Swal.fire({
-        icon: 'error',
-        confirmButtonColor: '#6c757d',
-        text: '{{ error_message }}',
-    });
-</script>
-{% endif %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.all.min.js"
+            integrity="sha256-RhRrbx+dLJ7yhikmlbEyQjEaFMSutv6AzLv3m6mQ6PQ=" crossorigin="anonymous"></script>
+    {% if error_message %}
+        <script>
+            Swal.fire({
+                icon: 'error',
+                confirmButtonColor: '#6c757d',
+                text: '{{ error_message }}',
+            });
+        </script>
+    {% endif %}
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

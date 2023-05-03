@@ -16,24 +16,25 @@
     <link rel="stylesheet" href="{% static 'base/assets/css/styles.css' %}">
         {% block css %}
 
+        
         {% endblock %}
     <link rel="icon" type="image/png" href="{% static 'base/assets/img/logo1.png' %}">
     <link rel="stylesheet" href="{% static 'Fields/static/Fields/style/styles.css' %}">
 </head>
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="57">
     {% block nav %}
-    <nav class="navbar bg-dark navbar-expand-lg fixed-top" id="mainNav">
+    <nav class="navbar bg-light text-dark navbar-expand-lg fixed-top" id="mainNav">
         <div class="container"><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
             <div class=" navbar-collapse" id="navbarResponsive">
-                <img src="{% static 'base/assets/img/NIXFC-removebg-preview.png' %}" width="67" height="65" href="/">
+                <img src="{% static 'base/assets/img/logo.png' %}" height="68" href="/">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#usersList.html">Show Users</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Find a player</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">RSV a pitch</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#CreationRoom">Create Room</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#AddUserToRoom">Add User To Room</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#AllRooms">All Rooms</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item  "><a class=" text-dark nav-link" href="#usersList.html">Show Users</a></li>
+                    <li class="nav-item"><a class="text-dark nav-link" href="#services">Find a player</a></li>
+                    <li class="nav-item"><a class="text-dark nav-link" href="#portfolio">RSV a pitch</a></li>
+                    <li class="nav-item"><a class="text-dark nav-link" href="#CreationRoom">Create Room</a></li>
+                    <li class="nav-item"><a class="text-dark nav-link" href="#AddUserToRoom">Add User To Room</a></li>
+                    <li class="nav-item"><a class="text-dark nav-link" href="#AllRooms">All Rooms</a></li>
+                    <li class="nav-item"><a class="text-dark nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -42,6 +43,7 @@
 {% block content %}
 
 {% endblock %}
+
 
 {% block js %}{% endblock %}
 <script src="{% static 'base/assets/bootstrap/js/bootstrap.min.js' %}"></script>

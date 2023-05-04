@@ -19,7 +19,10 @@
 
 <h2>Note moyenne:</h2>
 <p>{{ note_moyenne }} / 5</p>
-
+<form method="post" action="{% url 'ajouter_note' recette.pk %}">
+    {% csrf_token %}
+    {% include 'ajouter_note.html' %}
+  </form>
 <h2>Commentaires:</h2>
 {% for commentaire in commentaires %}
   <div>

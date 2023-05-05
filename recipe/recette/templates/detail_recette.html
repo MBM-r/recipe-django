@@ -1,3 +1,4 @@
+details recette :
 {% extends 'base/base.html' %}
 {% load static %}
 {% block content %}
@@ -22,6 +23,10 @@
 <form method="post" action="{% url 'ajouter_note' recette.pk %}">
     {% csrf_token %}
     {% include 'ajouter_note.html' %}
+  </form>
+  <form method="post" action="{% url 'ajouter_commentaire' recette.pk %}">
+      {% csrf_token %}
+      {% include 'ajouter_commentaire.html' %}
   </form>
 <h2>Commentaires:</h2>
 {% for commentaire in commentaires %}

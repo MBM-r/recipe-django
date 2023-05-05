@@ -9,7 +9,7 @@ def signup(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            # Rediriger vers une page de confirmation ou de connexion
+           
             return redirect('signIn')
     else:
         form = CustomUserCreationForm()

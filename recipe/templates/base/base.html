@@ -38,14 +38,19 @@
             <div class=" navbar-collapse" id="navbarResponsive">
                 <img src="{% static 'base/assets/img/logo.png' %}" height="68" href="/">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item  "><a class=" text-dark nav-link"  href="{% url 'home' %}"><i
+                    {% if user.is_authenticated %}
+                    <li class="nav-item  "><a class=" text-dark nav-link" href="{% url 'home' %}"><i
                                 class="fa-solid fa-house"></i> Home</a></li>
                     <li class="nav-item"><a class="text-dark nav-link" href="#services"> <i
                                 class="fa-solid fa-utensils"></i> Recipes</a></li>
+                    <li class="nav-item"><a class="text-dark nav-link" href="{% url 'logout' %}"> <i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                    {% else %}
                     <li class="nav-item"><a class="text-dark nav-link" href="{% url 'signIn' %}"><i
                                 class="fa-solid fa-right-to-bracket"></i> Login</a></li>
                     <li class="nav-item"><a class="text-dark nav-link" href="{% url 'signUp' %}"><i
                                 class="fa-solid fa-user-plus"></i> Register</a></li>
+                    {% endif %}
+
                 </ul>
             </div>
         </div>
@@ -59,21 +64,24 @@
 
     <br><br>
     <div class="card text-center">
-       
-            <div class="  card-header">
-                <a href="https://github.com" class="p-2 " target="_blank" style="text-decoration: none;" rel="noopener">
-                    <i class="fa-brands fa-github "></i>
-                </a>
-                <a href="https://www.linkedin.com/" class="p-2" style="text-decoration: none;" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin-in media-icons" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.instagram.com/" class="p-2" style="text-decoration: none;"  target="_blank" rel="noopener">
-                    <i class="fab fa-instagram media-icons" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.facebook.com/" class="p-2" style="text-decoration: none;"  target="_blank" rel="noopener">
-                    <i class="fab fa-facebook media-icons" aria-hidden="true"></i>
-                </a>
-            
+
+        <div class="  card-header">
+            <a href="https://github.com" class="p-2 " target="_blank" style="text-decoration: none;" rel="noopener">
+                <i class="fa-brands fa-github "></i>
+            </a>
+            <a href="https://www.linkedin.com/" class="p-2" style="text-decoration: none;" target="_blank"
+                rel="noopener">
+                <i class="fab fa-linkedin-in media-icons" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/" class="p-2" style="text-decoration: none;" target="_blank"
+                rel="noopener">
+                <i class="fab fa-instagram media-icons" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.facebook.com/" class="p-2" style="text-decoration: none;" target="_blank"
+                rel="noopener">
+                <i class="fab fa-facebook media-icons" aria-hidden="true"></i>
+            </a>
+
             <p class="disclamer-text"> For educational purposes only | © 2023
                 <a href="https://github.com" target="_blank" class="author-link">Home&nbsp;Baking</a>
             </p>
